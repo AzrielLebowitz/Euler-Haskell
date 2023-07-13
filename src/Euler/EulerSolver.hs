@@ -49,4 +49,4 @@ euler n
      | n == 17 =    euler17
      | n == 18 =    euler18
      | n == 19 =    euler19
-     | otherwise =  42 -- answer to life, universe and all. 
+     | otherwise =  42 -- Answer to life, universe and all. 
