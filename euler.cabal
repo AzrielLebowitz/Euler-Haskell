@@ -26,12 +26,25 @@ source-repository head
 library
   exposed-modules:
       Euler.Euler1
+      Euler.Euler10
+      Euler.Euler11
+      Euler.Euler12
+      Euler.Euler13
+      Euler.Euler14
+      Euler.Euler15
+      Euler.Euler16
+      Euler.Euler17
+      Euler.Euler18
+      Euler.Euler19
       Euler.Euler2
       Euler.Euler3
       Euler.Euler35
       Euler.Euler4
       Euler.Euler5
+      Euler.Euler6
       Euler.Euler7
+      Euler.Euler8
+      Euler.Euler9
       Euler.EulerSolver
       Euler.EulerType
       Lib
@@ -49,12 +62,25 @@ executable euler-exe
   main-is: Main.hs
   other-modules:
       Euler.Euler1
+      Euler.Euler10
+      Euler.Euler11
+      Euler.Euler12
+      Euler.Euler13
+      Euler.Euler14
+      Euler.Euler15
+      Euler.Euler16
+      Euler.Euler17
+      Euler.Euler18
+      Euler.Euler19
       Euler.Euler2
       Euler.Euler3
       Euler.Euler35
       Euler.Euler4
       Euler.Euler5
+      Euler.Euler6
       Euler.Euler7
+      Euler.Euler8
+      Euler.Euler9
       Euler.EulerSolver
       Euler.EulerType
       Lib
@@ -73,12 +99,25 @@ test-suite euler-test
   main-is: Spec.hs
   other-modules:
       Euler.Euler1
+      Euler.Euler10
+      Euler.Euler11
+      Euler.Euler12
+      Euler.Euler13
+      Euler.Euler14
+      Euler.Euler15
+      Euler.Euler16
+      Euler.Euler17
+      Euler.Euler18
+      Euler.Euler19
       Euler.Euler2
       Euler.Euler3
       Euler.Euler35
       Euler.Euler4
       Euler.Euler5
+      Euler.Euler6
       Euler.Euler7
+      Euler.Euler8
+      Euler.Euler9
       Euler.EulerSolver
       Euler.EulerType
       Lib
