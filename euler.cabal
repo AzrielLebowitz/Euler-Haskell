@@ -30,6 +30,7 @@ library
       Euler.Euler3
       Euler.Euler35
       Euler.Euler4
+      Euler.Euler5
       Euler.Euler7
       Euler.EulerSolver
       Euler.EulerType
@@ -52,6 +53,7 @@ executable euler-exe
       Euler.Euler3
       Euler.Euler35
       Euler.Euler4
+      Euler.Euler5
       Euler.Euler7
       Euler.EulerSolver
       Euler.EulerType
@@ -75,6 +77,7 @@ test-suite euler-test
       Euler.Euler3
       Euler.Euler35
       Euler.Euler4
+      Euler.Euler5
       Euler.Euler7
       Euler.EulerSolver
       Euler.EulerType
