@@ -29,7 +29,10 @@ library
       Euler.Euler2
       Euler.Euler3
       Euler.Euler35
+      Euler.Euler4
       Euler.Euler7
+      Euler.EulerSolver
+      Euler.EulerType
       Lib
       MathUtils
   other-modules:
@@ -48,7 +51,10 @@ executable euler-exe
       Euler.Euler2
       Euler.Euler3
       Euler.Euler35
+      Euler.Euler4
       Euler.Euler7
+      Euler.EulerSolver
+      Euler.EulerType
       Lib
       MathUtils
       Paths_euler
@@ -68,7 +74,10 @@ test-suite euler-test
       Euler.Euler2
       Euler.Euler3
       Euler.Euler35
+      Euler.Euler4
       Euler.Euler7
+      Euler.EulerSolver
+      Euler.EulerType
       Lib
       MathUtils
       Paths_euler

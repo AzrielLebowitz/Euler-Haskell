@@ -8,6 +8,8 @@ module MathUtils
     , isCircularPrime
     , circularPrimes
     , rotate
+    , reverseInt
+    , isPalindrome
 ) where
   
 import Data.List()
@@ -39,5 +41,8 @@ circularPrimes p = map read (rotate (show p))
 rotate :: [a] -> [[a]]
 rotate xs = take (length xs) (iterate (\(y:ys) -> ys ++ [y]) xs)
 
--- isPalindrome :: instance Class Data where
-  -- f = undefined
+reverseInt :: Int -> Int
+reverseInt = read . reverse . show
+
+isPalindrome :: Int -> Bool
+isPalindrome num = num == reverseInt num
