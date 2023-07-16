@@ -10,6 +10,7 @@ module MathUtils
     , rotate
     , reverseInt
     , isPalindrome
+    , isPythagorean
 ) where
   
 import Data.List()
@@ -46,3 +47,6 @@ reverseInt = read . reverse . show
 
 isPalindrome :: Int -> Bool
 isPalindrome num = num == reverseInt num
+
+isPythagorean :: (Int, Int, Int) -> Bool
+isPythagorean (a, b, c) = a^2 + b^2 == c^2
