@@ -13,6 +13,7 @@ module MathUtils
     , isPythagorean
     , triangularNum
     , generateTriangularNum
+    , sumDigits
 ) where
   
 import Data.List()
@@ -58,3 +59,7 @@ triangularNum n = (n * (n+1)) `div` 2
 
 generateTriangularNum :: [Int]
 generateTriangularNum = scanl1 (+) [1..]
+
+sumDigits :: Int -> Int
+sumDigits 0 = 0
+sumDigits x = (x `mod` 10) + sumDigits (x `div` 10)
