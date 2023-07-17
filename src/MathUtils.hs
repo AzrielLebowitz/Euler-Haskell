@@ -62,7 +62,7 @@ triangularNum n = (n * (n+1)) `div` 2
 generateTriangularNum :: [Int]
 generateTriangularNum = scanl1 (+) [1..]
 
-sumDigits :: Int -> Int
+sumDigits :: Integer -> Integer
 sumDigits 0 = 0
 sumDigits x = (x `mod` 10) + sumDigits (x `div` 10)
 
