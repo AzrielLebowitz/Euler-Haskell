@@ -10,6 +10,12 @@ module MathUtils
     , rotate
     , reverseInt
     , isPalindrome
+    , isPythagorean
+    , triangularNum
+    , generateTriangularNum
+    , sumDigits
+    , collatzLength
+    , collatzSequence
 ) where
   
 import Data.List()
@@ -46,3 +52,24 @@ reverseInt = read . reverse . show
 
 isPalindrome :: Int -> Bool
 isPalindrome num = num == reverseInt num
+
+isPythagorean :: (Int, Int, Int) -> Bool
+isPythagorean (a, b, c) = a^2 + b^2 == c^2
+
+triangularNum :: Int -> Int
+triangularNum n = (n * (n+1)) `div` 2
+
+generateTriangularNum :: [Int]
+generateTriangularNum = scanl1 (+) [1..]
+
+sumDigits :: Integer -> Integer
+sumDigits 0 = 0
+sumDigits x = (x `mod` 10) + sumDigits (x `div` 10)
+
+collatzLength :: Int -> Int
+collatzLength = length . collatzSequence
+
+collatzSequence :: Int -> [Int]
+collatzSequence 1 = [1]
+collatzSequence n = if even n then n : collatzSequence (n `div` 2) else n : collatzSequence (3 * n + 1)
+
