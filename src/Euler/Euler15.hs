@@ -5,4 +5,4 @@ import Euler.EulerType (EulerType)
 
 
 euler15 :: EulerType
-euler15 = -1
+euler15 = iterate (scanl1 (+)) (repeat 1) !! 20 !! 20
