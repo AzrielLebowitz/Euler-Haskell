@@ -14,6 +14,8 @@ module MathUtils
     , triangularNum
     , generateTriangularNum
     , sumDigits
+    , collatzLength
+    , collatzSequence
 ) where
   
 import Data.List()
@@ -63,3 +65,11 @@ generateTriangularNum = scanl1 (+) [1..]
 sumDigits :: Int -> Int
 sumDigits 0 = 0
 sumDigits x = (x `mod` 10) + sumDigits (x `div` 10)
+
+collatzLength :: Int -> Int
+collatzLength = length . collatzSequence
+
+collatzSequence :: Int -> [Int]
+collatzSequence 1 = [1]
+collatzSequence n = if even n then n : collatzSequence (n `div` 2) else n : collatzSequence (3 * n + 1)
+
