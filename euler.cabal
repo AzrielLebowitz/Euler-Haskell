@@ -37,9 +37,29 @@ library
       Euler.Euler18
       Euler.Euler19
       Euler.Euler2
+      Euler.Euler20
+      Euler.Euler21
+      Euler.Euler22
+      Euler.Euler23
+      Euler.Euler24
+      Euler.Euler25
+      Euler.Euler26
+      Euler.Euler27
+      Euler.Euler28
+      Euler.Euler29
       Euler.Euler3
+      Euler.Euler30
+      Euler.Euler31
+      Euler.Euler32
+      Euler.Euler33
+      Euler.Euler34
       Euler.Euler35
+      Euler.Euler36
+      Euler.Euler37
+      Euler.Euler38
+      Euler.Euler39
       Euler.Euler4
+      Euler.Euler40
       Euler.Euler5
       Euler.Euler6
       Euler.Euler7
@@ -73,9 +93,29 @@ executable euler-exe
       Euler.Euler18
       Euler.Euler19
       Euler.Euler2
+      Euler.Euler20
+      Euler.Euler21
+      Euler.Euler22
+      Euler.Euler23
+      Euler.Euler24
+      Euler.Euler25
+      Euler.Euler26
+      Euler.Euler27
+      Euler.Euler28
+      Euler.Euler29
       Euler.Euler3
+      Euler.Euler30
+      Euler.Euler31
+      Euler.Euler32
+      Euler.Euler33
+      Euler.Euler34
       Euler.Euler35
+      Euler.Euler36
+      Euler.Euler37
+      Euler.Euler38
+      Euler.Euler39
       Euler.Euler4
+      Euler.Euler40
       Euler.Euler5
       Euler.Euler6
       Euler.Euler7
@@ -110,9 +150,29 @@ test-suite euler-test
       Euler.Euler18
       Euler.Euler19
       Euler.Euler2
+      Euler.Euler20
+      Euler.Euler21
+      Euler.Euler22
+      Euler.Euler23
+      Euler.Euler24
+      Euler.Euler25
+      Euler.Euler26
+      Euler.Euler27
+      Euler.Euler28
+      Euler.Euler29
       Euler.Euler3
+      Euler.Euler30
+      Euler.Euler31
+      Euler.Euler32
+      Euler.Euler33
+      Euler.Euler34
       Euler.Euler35
+      Euler.Euler36
+      Euler.Euler37
+      Euler.Euler38
+      Euler.Euler39
       Euler.Euler4
+      Euler.Euler40
       Euler.Euler5
       Euler.Euler6
       Euler.Euler7
