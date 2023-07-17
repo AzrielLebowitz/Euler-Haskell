@@ -6,7 +6,7 @@ import Euler.EulerSolver (euler)
 someFunc :: IO ()
 someFunc = do
   start <- getCPUTime
-  print $ euler 16
+  print $ euler 18
   end <- getCPUTime
   let diff = fromIntegral (end - start) / (10.0 ^ (12 :: Int)) :: Double
   putStrLn $ "Execution time: " ++ show diff ++ " seconds"
