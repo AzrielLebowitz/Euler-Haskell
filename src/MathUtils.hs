@@ -16,6 +16,8 @@ module MathUtils
     , sumDigits
     , collatzLength
     , collatzSequence
+    , sumfactors
+    , isAmicable
 ) where
   
 import Data.List()
@@ -73,3 +75,8 @@ collatzSequence :: Int -> [Int]
 collatzSequence 1 = [1]
 collatzSequence n = if even n then n : collatzSequence (n `div` 2) else n : collatzSequence (3 * n + 1)
 
+sumfactors :: Int -> Int
+sumfactors n = sum(factors n) - n
+
+isAmicable :: Int ->  Int -> Bool
+isAmicable i j = i == sumfactors j && j == sumfactors i && i /= j
