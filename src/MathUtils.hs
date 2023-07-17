@@ -11,6 +11,8 @@ module MathUtils
     , reverseInt
     , isPalindrome
     , isPythagorean
+    , triangularNum
+    , generateTriangularNum
 ) where
   
 import Data.List()
@@ -50,3 +52,9 @@ isPalindrome num = num == reverseInt num
 
 isPythagorean :: (Int, Int, Int) -> Bool
 isPythagorean (a, b, c) = a^2 + b^2 == c^2
+
+triangularNum :: Int -> Int
+triangularNum n = (n * (n+1)) `div` 2
+
+generateTriangularNum :: [Int]
+generateTriangularNum = scanl1 (+) [1..]
