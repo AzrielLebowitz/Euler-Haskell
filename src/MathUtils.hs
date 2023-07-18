@@ -25,9 +25,11 @@ module MathUtils
     , canBeWrittenWithTwo
     , cannotBeWrittenWithTwoAbundantNums
     , countDigits
+    , findCycle
+    , cycleLength
 ) where
   
-import Data.List(nub)
+import Data.List(nub, elemIndex)
 
 factors :: Int -> [Int]
 factors n = nub $ [x | x <- [1..floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
@@ -108,3 +110,10 @@ cannotBeWrittenWithTwoAbundantNums num = not $ any (\x -> isAbundant $ num-x) (t
 
 countDigits :: Int -> Int
 countDigits = length . show
+
+findCycle :: Int -> Int -> [Int] -> Int
+findCycle _ 0 _ = 0
+findCycle d n rs = maybe (findCycle d (10 * r) (r : rs)) (+1) (elemIndex r rs) where r = n `rem` d
+
+cycleLength :: Int -> Int
+cycleLength d = findCycle d 1 []
