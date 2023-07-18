@@ -27,6 +27,7 @@ module MathUtils
     , countDigits
     , findCycle
     , cycleLength
+    , quadratic
 ) where
   
 import Data.List(nub, elemIndex)
@@ -117,3 +118,7 @@ findCycle d n rs = maybe (findCycle d (10 * r) (r : rs)) (+1) (elemIndex r rs) w
 
 cycleLength :: Int -> Int
 cycleLength d = findCycle d 1 []
+
+quadratic :: Int -> Int -> Int -> Int
+quadratic a b n = n * n + a * n + b
+
