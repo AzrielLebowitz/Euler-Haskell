@@ -18,12 +18,16 @@ module MathUtils
     , collatzSequence
     , sumfactors
     , isAmicable
+    , isAbundant
+    , abundantNumbers
+    , canBeWrittenWithTwo
+    , cannotBeWrittenWithTwoAbundantNums
 ) where
   
-import Data.List()
+import Data.List(nub)
 
 factors :: Int -> [Int]
-factors n =  [x | x <- [1..floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
+factors n = nub $ [x | x <- [1..floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
 
 isPrime :: Int -> Bool
 isPrime n = n > 1 && all (\x -> n `mod` x /= 0) [2..floor (sqrt (fromIntegral n))]
@@ -80,3 +84,15 @@ sumfactors n = sum(factors n) - n
 
 isAmicable :: Int ->  Int -> Bool
 isAmicable i j = i == sumfactors j && j == sumfactors i && i /= j
+
+isAbundant:: Int -> Bool
+isAbundant num = num < sumfactors num
+
+abundantNumbers :: [Int]
+abundantNumbers = filter isAbundant [1..28123]
+
+canBeWrittenWithTwo :: [Int] -> Int -> Bool
+canBeWrittenWithTwo lst num = any (\x -> (num - x) `elem` lst) lst
+
+cannotBeWrittenWithTwoAbundantNums :: Int -> Bool
+cannotBeWrittenWithTwoAbundantNums num = not $ any (\x -> isAbundant $ num-x) (takeWhile(<= num `div` 2) abundantNumbers)
