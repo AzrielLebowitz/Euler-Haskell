@@ -5,6 +5,8 @@ module MathUtils
     , primeFactors
     , allPrimeFactors
     , fibs
+    , largeFibs
+    , fibsWithIndex
     , isCircularPrime
     , circularPrimes
     , rotate
@@ -16,12 +18,22 @@ module MathUtils
     , sumDigits
     , collatzLength
     , collatzSequence
+    , sumfactors
+    , isAmicable
+    , isAbundant
+    , abundantNumbers
+    , canBeWrittenWithTwo
+    , cannotBeWrittenWithTwoAbundantNums
+    , countDigits
+    , findCycle
+    , cycleLength
+    , quadratic
 ) where
   
-import Data.List()
+import Data.List(nub, elemIndex)
 
 factors :: Int -> [Int]
-factors n =  [x | x <- [1..floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
+factors n = nub $ [x | x <- [1..floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
 
 isPrime :: Int -> Bool
 isPrime n = n > 1 && all (\x -> n `mod` x /= 0) [2..floor (sqrt (fromIntegral n))]
@@ -37,6 +49,12 @@ allPrimeFactors num = [x | x <- takeWhile (\x -> x * x <= num) primes, num `mod`
 
 fibs :: [Int]
 fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
+
+largeFibs :: [Integer]
+largeFibs = 0 : 1 : zipWith (+) largeFibs (tail largeFibs)
+
+fibsWithIndex :: [(Integer, Int)]
+fibsWithIndex = zip largeFibs [0..]
 
 isCircularPrime :: Int -> Bool
 isCircularPrime p = all isPrime (circularPrimes p)
@@ -72,4 +90,35 @@ collatzLength = length . collatzSequence
 collatzSequence :: Int -> [Int]
 collatzSequence 1 = [1]
 collatzSequence n = if even n then n : collatzSequence (n `div` 2) else n : collatzSequence (3 * n + 1)
+
+sumfactors :: Int -> Int
+sumfactors n = sum(factors n) - n
+
+isAmicable :: Int ->  Int -> Bool
+isAmicable i j = i == sumfactors j && j == sumfactors i && i /= j
+
+isAbundant:: Int -> Bool
+isAbundant num = num < sumfactors num
+
+abundantNumbers :: [Int]
+abundantNumbers = filter isAbundant [1..28123]
+
+canBeWrittenWithTwo :: [Int] -> Int -> Bool
+canBeWrittenWithTwo lst num = any (\x -> (num - x) `elem` lst) lst
+
+cannotBeWrittenWithTwoAbundantNums :: Int -> Bool
+cannotBeWrittenWithTwoAbundantNums num = not $ any (\x -> isAbundant $ num-x) (takeWhile(<= num `div` 2) abundantNumbers)
+
+countDigits :: Int -> Int
+countDigits = length . show
+
+findCycle :: Int -> Int -> [Int] -> Int
+findCycle _ 0 _ = 0
+findCycle d n rs = maybe (findCycle d (10 * r) (r : rs)) (+1) (elemIndex r rs) where r = n `rem` d
+
+cycleLength :: Int -> Int
+cycleLength d = findCycle d 1 []
+
+quadratic :: Int -> Int -> Int -> Int
+quadratic a b n = n * n + a * n + b
 
