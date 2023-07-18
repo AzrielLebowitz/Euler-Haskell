@@ -5,6 +5,8 @@ module MathUtils
     , primeFactors
     , allPrimeFactors
     , fibs
+    , largeFibs
+    , fibsWithIndex
     , isCircularPrime
     , circularPrimes
     , rotate
@@ -22,6 +24,7 @@ module MathUtils
     , abundantNumbers
     , canBeWrittenWithTwo
     , cannotBeWrittenWithTwoAbundantNums
+    , countDigits
 ) where
   
 import Data.List(nub)
@@ -43,6 +46,12 @@ allPrimeFactors num = [x | x <- takeWhile (\x -> x * x <= num) primes, num `mod`
 
 fibs :: [Int]
 fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
+
+largeFibs :: [Integer]
+largeFibs = 0 : 1 : zipWith (+) largeFibs (tail largeFibs)
+
+fibsWithIndex :: [(Integer, Int)]
+fibsWithIndex = zip largeFibs [0..]
 
 isCircularPrime :: Int -> Bool
 isCircularPrime p = all isPrime (circularPrimes p)
@@ -96,3 +105,6 @@ canBeWrittenWithTwo lst num = any (\x -> (num - x) `elem` lst) lst
 
 cannotBeWrittenWithTwoAbundantNums :: Int -> Bool
 cannotBeWrittenWithTwoAbundantNums num = not $ any (\x -> isAbundant $ num-x) (takeWhile(<= num `div` 2) abundantNumbers)
+
+countDigits :: Int -> Int
+countDigits = length . show
