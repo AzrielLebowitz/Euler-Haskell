@@ -69,6 +69,7 @@ library
       Euler.EulerType
       Lib
       MathUtils
+      Utils
   other-modules:
       Paths_euler
   hs-source-dirs:
@@ -125,6 +126,7 @@ executable euler-exe
       Euler.EulerType
       Lib
       MathUtils
+      Utils
       Paths_euler
   hs-source-dirs:
       app
@@ -182,6 +184,7 @@ test-suite euler-test
       Euler.EulerType
       Lib
       MathUtils
+      Utils
       Paths_euler
   hs-source-dirs:
       test
