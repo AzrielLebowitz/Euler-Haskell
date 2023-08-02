@@ -60,6 +60,7 @@ library
       Euler.Euler39
       Euler.Euler4
       Euler.Euler40
+      Euler.Euler48
       Euler.Euler5
       Euler.Euler6
       Euler.Euler7
@@ -118,6 +119,7 @@ executable euler-exe
       Euler.Euler39
       Euler.Euler4
       Euler.Euler40
+      Euler.Euler48
       Euler.Euler5
       Euler.Euler6
       Euler.Euler7
@@ -177,6 +179,7 @@ test-suite euler-test
       Euler.Euler39
       Euler.Euler4
       Euler.Euler40
+      Euler.Euler48
       Euler.Euler5
       Euler.Euler6
       Euler.Euler7

@@ -44,6 +44,8 @@ import Euler.Euler36 (euler36)
 import Euler.Euler37 (euler37)
 import Euler.Euler38 (euler38)
 import Euler.Euler39 (euler39)
+import Euler.Euler40 (euler40)
+import Euler.Euler48 (euler48)
 
 
 
@@ -89,4 +91,6 @@ euler n
      | n == 37 =    euler37
      | n == 38 =    euler38
      | n == 39 =    euler39
+     | n == 40 =    euler40
+     | n == 48 =    euler48
      | otherwise =  42 -- Answer to life, universe and all. 
