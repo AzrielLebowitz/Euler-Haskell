@@ -28,6 +28,10 @@ module MathUtils
     , findCycle
     , cycleLength
     , quadratic
+    , squars
+    , sumExistsInLists
+    , isSquare
+    , goldbachsOtherConjecture
 ) where
   
 import Data.List(nub, elemIndex)
@@ -121,4 +125,16 @@ cycleLength d = findCycle d 1 []
 
 quadratic :: Int -> Int -> Int -> Int
 quadratic a b n = n * n + a * n + b
+
+squars :: [Int]
+squars = [x^2 | x <- [1..]]
+
+sumExistsInLists :: Int -> [Int] -> [Int] -> Bool
+sumExistsInLists num xs ys = any (\x -> any (\y -> x + y == num) (takeWhile (<num) ys)) (takeWhile (<num) xs)
+
+isSquare :: Int -> Bool
+isSquare x = let root = floor $ sqrt $ fromIntegral x in root*root == x
+
+goldbachsOtherConjecture :: Int -> Bool
+goldbachsOtherConjecture n = any (\p -> isSquare ((n - p) `div` 2)) $ takeWhile (< n) primes
 
