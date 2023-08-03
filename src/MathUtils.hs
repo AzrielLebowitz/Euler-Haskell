@@ -34,10 +34,12 @@ module MathUtils
     , goldbachsOtherConjecture
     , wordValue
     , isTriagulerNumber
+    , isPandigital
+    , pandigitals
 ) where
   
-import Data.List(nub, elemIndex)
-import Data.Char (ord)
+import Data.List(nub, elemIndex, sort, permutations)
+import Data.Char (ord, intToDigit)
 
 factors :: Int -> [Int]
 factors n = nub $ [x | x <- [1..floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
@@ -146,3 +148,9 @@ wordValue = sum . map (\c -> ord c - 64)
 
 isTriagulerNumber :: Int -> Bool
 isTriagulerNumber n = any (== n) (takeWhile(<=n) generateTriangularNum)
+
+isPandigital :: Int -> Bool
+isPandigital n = (sort . show $ n) == map intToDigit [1..length . nub . show $ n]
+
+pandigitals :: [Int]
+pandigitals = map read $ permutations "1234567"
