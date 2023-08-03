@@ -35,6 +35,7 @@ module MathUtils
 ) where
   
 import Data.List(nub, elemIndex)
+import Data.Char (ord)
 
 factors :: Int -> [Int]
 factors n = nub $ [x | x <- [1..floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
@@ -137,4 +138,7 @@ isSquare x = let root = floor $ sqrt $ fromIntegral x in root*root == x
 
 goldbachsOtherConjecture :: Int -> Bool
 goldbachsOtherConjecture n = any (\p -> isSquare ((n - p) `div` 2)) $ takeWhile (< n) primes
+
+wordValue :: String -> Int
+wordValue = sum . map (\c -> ord c - 64)
 
