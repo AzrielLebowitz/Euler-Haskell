@@ -32,6 +32,8 @@ module MathUtils
     , sumExistsInLists
     , isSquare
     , goldbachsOtherConjecture
+    , wordValue
+    , isTriagulerNumber
 ) where
   
 import Data.List(nub, elemIndex)
@@ -142,3 +144,5 @@ goldbachsOtherConjecture n = any (\p -> isSquare ((n - p) `div` 2)) $ takeWhile 
 wordValue :: String -> Int
 wordValue = sum . map (\c -> ord c - 64)
 
+isTriagulerNumber :: Int -> Bool
+isTriagulerNumber n = any (== n) (takeWhile(<=n) generateTriangularNum)
