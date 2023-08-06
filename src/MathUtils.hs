@@ -41,10 +41,13 @@ module MathUtils
     , isTruncatablePrime
     , isDigitInTruncablePrime
     , primesWithOddDigits
+    , makeBinary
+    , isBinaryPalindrome
 ) where
   
 import Data.List(nub, elemIndex, sort, permutations, inits, tails)
 import Data.Char (ord, intToDigit)
+import Numeric (showIntAtBase)
 
 factors :: Int -> [Int]
 factors n = nub $ [x | x <- [1..floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
@@ -174,3 +177,10 @@ isDigitInTruncablePrime d = d `elem` "123579"
 
 primesWithOddDigits :: [Int]
 primesWithOddDigits = filter (all isDigitInTruncablePrime . show) primes
+
+makeBinary :: Int -> [Char]
+makeBinary n = showIntAtBase 2 intToDigit n ""
+
+isBinaryPalindrome :: Int -> Bool
+isBinaryPalindrome n = reverse (makeBinary n) == makeBinary n
+
