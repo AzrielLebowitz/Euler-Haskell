@@ -28,9 +28,27 @@ module MathUtils
     , findCycle
     , cycleLength
     , quadratic
+    , squars
+    , sumExistsInLists
+    , isSquare
+    , goldbachsOtherConjecture
+    , wordValue
+    , isTriagulerNumber
+    , isPandigital
+    , pandigitals
+    , truncateRight
+    , truncateLeft
+    , isTruncatablePrime
+    , isDigitInTruncablePrime
+    , primesWithOddDigits
+    , makeBinary
+    , isBinaryPalindrome
+    , countRightAngleTriangles
 ) where
   
-import Data.List(nub, elemIndex)
+import Data.List(nub, elemIndex, sort, permutations, inits, tails)
+import Data.Char (ord, intToDigit)
+import Numeric (showIntAtBase)
 
 factors :: Int -> [Int]
 factors n = nub $ [x | x <- [1..floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
@@ -121,4 +139,52 @@ cycleLength d = findCycle d 1 []
 
 quadratic :: Int -> Int -> Int -> Int
 quadratic a b n = n * n + a * n + b
+
+squars :: [Int]
+squars = [x^2 | x <- [1..]]
+
+sumExistsInLists :: Int -> [Int] -> [Int] -> Bool
+sumExistsInLists num xs ys = any (\x -> any (\y -> x + y == num) (takeWhile (<num) ys)) (takeWhile (<num) xs)
+
+isSquare :: Int -> Bool
+isSquare x = let root = floor $ sqrt $ fromIntegral x in root*root == x
+
+goldbachsOtherConjecture :: Int -> Bool
+goldbachsOtherConjecture n = any (\p -> isSquare ((n - p) `div` 2)) $ takeWhile (< n) primes
+
+wordValue :: String -> Int
+wordValue = sum . map (\c -> ord c - 64)
+
+isTriagulerNumber :: Int -> Bool
+isTriagulerNumber n = n `elem` takeWhile(<=n) generateTriangularNum
+
+isPandigital :: Int -> Bool
+isPandigital n = (sort . show $ n) == map intToDigit [1..length . nub . show $ n]
+
+pandigitals :: [Int]
+pandigitals = map read $ permutations "1234567"
+
+truncateRight :: Int -> [Int]
+truncateRight = init . map read . tails . show
+
+truncateLeft :: Int -> [Int]
+truncateLeft = tail . map read . inits . show
+
+isTruncatablePrime :: Int -> Bool
+isTruncatablePrime p = p > 10 && isPrime p && all isPrime (truncateLeft p) && all isPrime (truncateRight p)
+
+isDigitInTruncablePrime :: Char -> Bool
+isDigitInTruncablePrime d = d `elem` "123579"
+
+primesWithOddDigits :: [Int]
+primesWithOddDigits = filter (all isDigitInTruncablePrime . show) primes
+
+makeBinary :: Int -> [Char]
+makeBinary n = showIntAtBase 2 intToDigit n ""
+
+isBinaryPalindrome :: Int -> Bool
+isBinaryPalindrome n = reverse (makeBinary n) == makeBinary n
+
+countRightAngleTriangles :: Int -> Int
+countRightAngleTriangles n = length [() | a <- [1..n], b <- [a..n], let c = n - a - b, isPythagorean (a, b, c)]
 

@@ -44,7 +44,17 @@ import Euler.Euler36 (euler36)
 import Euler.Euler37 (euler37)
 import Euler.Euler38 (euler38)
 import Euler.Euler39 (euler39)
-
+import Euler.Euler40 (euler40)
+import Euler.Euler41 (euler41)
+import Euler.Euler42 (euler42)
+import Euler.Euler43 (euler43)
+import Euler.Euler44 (euler44)
+import Euler.Euler45 (euler45)
+import Euler.Euler46 (euler46)
+import Euler.Euler47 (euler47)
+import Euler.Euler48 (euler48)
+import Euler.Euler49 (euler49)
+import Euler.Euler50 (euler50)
 
 
 
@@ -89,4 +99,15 @@ euler n
      | n == 37 =    euler37
      | n == 38 =    euler38
      | n == 39 =    euler39
+     | n == 40 =    euler40
+     | n == 41 =    euler41
+     | n == 42 =    euler42
+     | n == 43 =    euler43
+     | n == 44 =    euler44
+     | n == 45 =    euler45
+     | n == 46 =    euler46
+     | n == 47 =    euler47
+     | n == 48 =    euler48
+     | n == 49 =    euler49
+     | n == 50 =    euler50
      | otherwise =  42 -- Answer to life, universe and all. 
