@@ -36,9 +36,14 @@ module MathUtils
     , isTriagulerNumber
     , isPandigital
     , pandigitals
+    , truncateRight
+    , truncateLeft
+    , isTruncatablePrime
+    , isOddDigit
+    , primesWithOddDigits
 ) where
   
-import Data.List(nub, elemIndex, sort, permutations)
+import Data.List(nub, elemIndex, sort, permutations, inits, tails)
 import Data.Char (ord, intToDigit)
 
 factors :: Int -> [Int]
@@ -147,10 +152,25 @@ wordValue :: String -> Int
 wordValue = sum . map (\c -> ord c - 64)
 
 isTriagulerNumber :: Int -> Bool
-isTriagulerNumber n = any (== n) (takeWhile(<=n) generateTriangularNum)
+isTriagulerNumber n = n `elem` takeWhile(<=n) generateTriangularNum
 
 isPandigital :: Int -> Bool
 isPandigital n = (sort . show $ n) == map intToDigit [1..length . nub . show $ n]
 
 pandigitals :: [Int]
 pandigitals = map read $ permutations "1234567"
+
+truncateRight :: Int -> [Int]
+truncateRight = init . map read . tails . show
+
+truncateLeft :: Int -> [Int]
+truncateLeft = tail . map read . inits . show
+
+isTruncatablePrime :: Int -> Bool
+isTruncatablePrime p = p > 10 && isPrime p && all isPrime (truncateLeft p) && all isPrime (truncateRight p)
+
+isOddDigit :: Char -> Bool
+isOddDigit d = d `elem` "13579"
+
+primesWithOddDigits :: [Int]
+primesWithOddDigits = filter (all isOddDigit . show) primes
