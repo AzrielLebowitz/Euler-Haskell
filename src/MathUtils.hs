@@ -43,6 +43,7 @@ module MathUtils
     , primesWithOddDigits
     , makeBinary
     , isBinaryPalindrome
+    , countRightAngleTriangles
 ) where
   
 import Data.List(nub, elemIndex, sort, permutations, inits, tails)
@@ -183,4 +184,7 @@ makeBinary n = showIntAtBase 2 intToDigit n ""
 
 isBinaryPalindrome :: Int -> Bool
 isBinaryPalindrome n = reverse (makeBinary n) == makeBinary n
+
+countRightAngleTriangles :: Int -> Int
+countRightAngleTriangles n = length [() | a <- [1..n], b <- [a..n], let c = n - a - b, isPythagorean (a, b, c)]
 
