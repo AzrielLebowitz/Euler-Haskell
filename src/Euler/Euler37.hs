@@ -6,4 +6,4 @@ import MathUtils (isTruncatablePrime, primesWithOddDigits)
 
 
 euler37 :: EulerType
-euler37 = sum $ take 10 $ filter isTruncatablePrime primesWithOddDigits
+euler37 = sum $ take 11 $ filter isTruncatablePrime primesWithOddDigits

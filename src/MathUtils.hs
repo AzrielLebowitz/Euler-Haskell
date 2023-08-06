@@ -39,7 +39,7 @@ module MathUtils
     , truncateRight
     , truncateLeft
     , isTruncatablePrime
-    , isOddDigit
+    , isDigitInTruncablePrime
     , primesWithOddDigits
 ) where
   
@@ -169,8 +169,8 @@ truncateLeft = tail . map read . inits . show
 isTruncatablePrime :: Int -> Bool
 isTruncatablePrime p = p > 10 && isPrime p && all isPrime (truncateLeft p) && all isPrime (truncateRight p)
 
-isOddDigit :: Char -> Bool
-isOddDigit d = d `elem` "13579"
+isDigitInTruncablePrime :: Char -> Bool
+isDigitInTruncablePrime d = d `elem` "123579"
 
 primesWithOddDigits :: [Int]
-primesWithOddDigits = filter (all isOddDigit . show) primes
+primesWithOddDigits = filter (all isDigitInTruncablePrime . show) primes
