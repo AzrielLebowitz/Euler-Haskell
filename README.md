@@ -16,7 +16,7 @@ To run the Haskell solutions, you need to have the following installed:
 
 2. Edit src/Lib.hs to import whatever euler problem you want to run.
 
-3. Run `stack run .` in main folder
+3. Run `EULER=<the problem number> stack run .` in main folder
 
 ## Sulotions
 I've solved problems 1-30, excluding problems 17 & 19.
