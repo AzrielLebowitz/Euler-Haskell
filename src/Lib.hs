@@ -11,7 +11,7 @@ someFunc = do
   start <- getCPUTime
   case readMaybe number :: Maybe Int of
     Just intValue -> print $ euler intValue
-    Nothing -> putStrLn $ "Failed To read env var \"EULER\", please use a valid env var so we can solve that function"
+    Nothing -> putStrLn "Failed To read env var \"EULER\", please use a valid env var so we can solve that function"
 
   end <- getCPUTime
   let diff = fromIntegral (end - start) / (10.0 ^ (12 :: Int)) :: Double
