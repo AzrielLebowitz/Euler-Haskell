@@ -195,9 +195,6 @@ countRightAngleTriangles n = length [() | a <- [1 .. n], b <- [a .. n], let c = 
 -- nthDigit :: Int -> Int
 -- nthDigit n = concat [show n | n <- [1..]]
 --
--- factorial :: Int -> Int
--- factorial 0 = 1
--- factorial num = num * factorial(num - 1)
 
 factorial :: Int -> Int
 factorial num = product [2 .. num]
@@ -207,4 +204,4 @@ digitsFactorialSum 0 = 0
 digitsFactorialSum num = factorial (num `mod` 10) + digitsFactorialSum (num `div` 10)
 
 isCuriousNumber :: Int -> Bool
-isCuriousNumber num = num == digitsFactorialSum (num)
+isCuriousNumber num = num == digitsFactorialSum num
