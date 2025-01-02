@@ -4,5 +4,4 @@ CHANGELOG.md
 out/
 *.exe
 .idea/
-test/
 *.txt
