@@ -116,3 +116,103 @@ main = hspec $ do
       let result = euler 25
       let expected = "a376802c0811f1b9088828288eb0d3f0"
       md5Hex result `shouldBe` expected
+    it "Euler 26" $ do
+      let result = euler 26
+      let expected = "6aab1270668d8cac7cef2566a1c5f569"
+      md5Hex result `shouldBe` expected
+    it "Euler 27" $ do
+      let result = euler 27
+      let expected = "69d9e3218fd7abb6ff453ea96505183d"
+      md5Hex result `shouldBe` expected
+    it "Euler 28" $ do
+      let result = euler 28
+      let expected = "0d53425bd7c5bf9919df3718c8e49fa6"
+      md5Hex result `shouldBe` expected
+    it "Euler 29" $ do
+      let result = euler 29
+      let expected = "6f0ca67289d79eb35d19decbc0a08453"
+      md5Hex result `shouldBe` expected
+    it "Euler 30" $ do
+      let result = euler 30
+      let expected = "27a1779a8a8c323a307ac8a70bc4489d"
+      md5Hex result `shouldBe` expected
+    it "Euler 31" $ do
+      let result = euler 31
+      let expected = "142dfe4a33d624d2b830a9257e96726d"
+      md5Hex result `shouldBe` expected
+    it "Euler 32" $ do
+      let result = euler 32
+      let expected = "100f6e37d0b0564490a2ee27eff0660d"
+      md5Hex result `shouldBe` expected
+    it "Euler 33" $ do
+      let result = euler 33
+      let expected = "f899139df5e1059396431415e770c6dd"
+      md5Hex result `shouldBe` expected
+    it "Euler 34" $ do
+      let result = euler 34
+      let expected = "60803ea798a0c0dfb7f36397d8d4d772"
+      md5Hex result `shouldBe` expected
+    it "Euler 35" $ do
+      let result = euler 35
+      let expected = "b53b3a3d6ab90ce0268229151c9bde11"
+      md5Hex result `shouldBe` expected
+    it "Euler 36" $ do
+      let result = euler 36
+      let expected = "0e175dc2f28833885f62e7345addff03"
+      md5Hex result `shouldBe` expected
+    it "Euler 37" $ do
+      let result = euler 37
+      let expected = "cace46c61b00de1b60874936a093981d"
+      md5Hex result `shouldBe` expected
+    it "Euler 38" $ do
+      let result = euler 38
+      let expected = "f2a29ede8dc9fae7926dc7a4357ac25e"
+      md5Hex result `shouldBe` expected
+    it "Euler 39" $ do
+      let result = euler 39
+      let expected = "fa83a11a198d5a7f0bf77a1987bcd006"
+      md5Hex result `shouldBe` expected
+    it "Euler 40" $ do
+      let result = euler 40
+      let expected = "6f3ef77ac0e3619e98159e9b6febf557"
+      md5Hex result `shouldBe` expected
+    it "Euler 41" $ do
+      let result = euler 41
+      let expected = "d0a1bd6ab4229b2d0754be8923431404"
+      md5Hex result `shouldBe` expected
+    it "Euler 42" $ do
+      let result = euler 42
+      let expected = "82aa4b0af34c2313a562076992e50aa3"
+      md5Hex result `shouldBe` expected
+    it "Euler 43" $ do
+      let result = euler 43
+      let expected = "115253b7721af0fdff25cd391dfc70cf"
+      md5Hex result `shouldBe` expected
+    it "Euler 44" $ do
+      let result = euler 44
+      let expected = "2c2556cb85621309ca647465ffa62370"
+      md5Hex result `shouldBe` expected
+    it "Euler 45" $ do
+      let result = euler 45
+      let expected = "30dfe3e3b286add9d12e493ca7be63fc"
+      md5Hex result `shouldBe` expected
+    it "Euler 46" $ do
+      let result = euler 46
+      let expected = "89abe98de6071178edb1b28901a8f459"
+      md5Hex result `shouldBe` expected
+    it "Euler 47" $ do
+      let result = euler 47
+      let expected = "748f517ecdc29106e2738f88aa7530f4"
+      md5Hex result `shouldBe` expected
+    it "Euler 48" $ do
+      let result = euler 48
+      let expected = "0829124724747ae1c65da8cae5263346"
+      md5Hex result `shouldBe` expected
+    it "Euler 49" $ do
+      let result = euler 49
+      let expected = "0b99933d3e2a9addccbb663d46cbb592"
+      md5Hex result `shouldBe` expected
+    it "Euler 50" $ do
+      let result = euler 50
+      let expected = "73229bab6c5dc1c7cf7a4fa123caf6bc"
+      md5Hex result `shouldBe` expected
