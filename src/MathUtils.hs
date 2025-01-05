@@ -44,6 +44,9 @@ module MathUtils
     makeBinary,
     isBinaryPalindrome,
     countRightAngleTriangles,
+    splitNthDigit,
+    splitNthDigit2,
+    nDigitSum,
     factorial,
     digitsFactorialSum,
     isCuriousNumber,
@@ -195,6 +198,14 @@ countRightAngleTriangles n = length [() | a <- [1 .. n], b <- [a .. n], let c = 
 -- nthDigit :: Int -> Int
 -- nthDigit n = concat [show n | n <- [1..]]
 --
+splitNthDigit :: String -> Int
+splitNthDigit = (\(x1, x2) -> read x1 * read x2) . splitAt 1
+
+splitNthDigit2 :: String -> Int
+splitNthDigit2 = (\(x1, x2) -> read x1 * read x2) . splitAt 2
+
+nDigitSum :: String -> Bool
+nDigitSum = (\(x1, x2) -> read x2 == splitNthDigit x1 || read x2 == splitNthDigit2 x1) . splitAt 5
 
 factorial :: Int -> Int
 factorial num = product [2 .. num]
