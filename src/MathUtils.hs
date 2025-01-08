@@ -50,6 +50,7 @@ module MathUtils
     factorial,
     digitsFactorialSum,
     isCuriousNumber,
+    getPandigitalOfMultiply,
   )
 where
 
@@ -216,3 +217,6 @@ digitsFactorialSum num = factorial (num `mod` 10) + digitsFactorialSum (num `div
 
 isCuriousNumber :: Int -> Bool
 isCuriousNumber num = num == digitsFactorialSum num
+
+getPandigitalOfMultiply :: Int -> Int -> [String] -> String
+getPandigitalOfMultiply num i ret = if length (concat ret) >= 9 then concat ret else getPandigitalOfMultiply num (i + 1) (ret ++ [show (num * i)])
