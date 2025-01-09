@@ -59,6 +59,7 @@ where
 
 import Data.Char (intToDigit, ord)
 import Data.List (elemIndex, inits, nub, permutations, sort, tails)
+import Data.Set (fromList, member)
 import Numeric (showIntAtBase)
 
 factors :: Int -> [Int]
@@ -231,4 +232,4 @@ generatePentagonal :: [Int]
 generatePentagonal = [pentagonalNum x | x <- [1 .. 2500]] -- the answer is at 2166
 
 isPentagonal :: Int -> Bool
-isPentagonal num = elem num generatePentagonal
+isPentagonal num = num `member` fromList generatePentagonal
