@@ -51,6 +51,9 @@ module MathUtils
     digitsFactorialSum,
     isCuriousNumber,
     getPandigitalOfMultiply,
+    pentagonalNum,
+    generatePentagonal,
+    isPentagonal,
   )
 where
 
@@ -220,3 +223,12 @@ isCuriousNumber num = num == digitsFactorialSum num
 
 getPandigitalOfMultiply :: Int -> Int -> [String] -> String
 getPandigitalOfMultiply num i ret = if length (concat ret) >= 9 then concat ret else getPandigitalOfMultiply num (i + 1) (ret ++ [show (num * i)])
+
+pentagonalNum :: Int -> Int
+pentagonalNum num = num * (3 * num - 1) `div` 2
+
+generatePentagonal :: [Int]
+generatePentagonal = [pentagonalNum x | x <- [1 .. 2500]] -- the answer is at 2166
+
+isPentagonal :: Int -> Bool
+isPentagonal num = elem num generatePentagonal
