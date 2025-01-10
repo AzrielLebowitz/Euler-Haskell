@@ -26,6 +26,7 @@ library
   exposed-modules:
       Euler.Euler1
       Euler.Euler10
+      Euler.Euler100
       Euler.Euler11
       Euler.Euler12
       Euler.Euler13
@@ -70,10 +71,59 @@ library
       Euler.Euler49
       Euler.Euler5
       Euler.Euler50
+      Euler.Euler51
+      Euler.Euler52
+      Euler.Euler53
+      Euler.Euler54
+      Euler.Euler55
+      Euler.Euler56
+      Euler.Euler57
+      Euler.Euler58
+      Euler.Euler59
       Euler.Euler6
+      Euler.Euler60
+      Euler.Euler61
+      Euler.Euler62
+      Euler.Euler63
+      Euler.Euler64
+      Euler.Euler65
+      Euler.Euler66
+      Euler.Euler67
+      Euler.Euler68
+      Euler.Euler69
       Euler.Euler7
+      Euler.Euler70
+      Euler.Euler71
+      Euler.Euler72
+      Euler.Euler73
+      Euler.Euler74
+      Euler.Euler75
+      Euler.Euler76
+      Euler.Euler77
+      Euler.Euler78
+      Euler.Euler79
       Euler.Euler8
+      Euler.Euler80
+      Euler.Euler81
+      Euler.Euler82
+      Euler.Euler83
+      Euler.Euler84
+      Euler.Euler85
+      Euler.Euler86
+      Euler.Euler87
+      Euler.Euler88
+      Euler.Euler89
       Euler.Euler9
+      Euler.Euler90
+      Euler.Euler91
+      Euler.Euler92
+      Euler.Euler93
+      Euler.Euler94
+      Euler.Euler95
+      Euler.Euler96
+      Euler.Euler97
+      Euler.Euler98
+      Euler.Euler99
       Euler.EulerSolver
       Euler.EulerType
       Lib
@@ -98,6 +148,7 @@ executable euler-exe
   other-modules:
       Euler.Euler1
       Euler.Euler10
+      Euler.Euler100
       Euler.Euler11
       Euler.Euler12
       Euler.Euler13
@@ -142,10 +193,59 @@ executable euler-exe
       Euler.Euler49
       Euler.Euler5
       Euler.Euler50
+      Euler.Euler51
+      Euler.Euler52
+      Euler.Euler53
+      Euler.Euler54
+      Euler.Euler55
+      Euler.Euler56
+      Euler.Euler57
+      Euler.Euler58
+      Euler.Euler59
       Euler.Euler6
+      Euler.Euler60
+      Euler.Euler61
+      Euler.Euler62
+      Euler.Euler63
+      Euler.Euler64
+      Euler.Euler65
+      Euler.Euler66
+      Euler.Euler67
+      Euler.Euler68
+      Euler.Euler69
       Euler.Euler7
+      Euler.Euler70
+      Euler.Euler71
+      Euler.Euler72
+      Euler.Euler73
+      Euler.Euler74
+      Euler.Euler75
+      Euler.Euler76
+      Euler.Euler77
+      Euler.Euler78
+      Euler.Euler79
       Euler.Euler8
+      Euler.Euler80
+      Euler.Euler81
+      Euler.Euler82
+      Euler.Euler83
+      Euler.Euler84
+      Euler.Euler85
+      Euler.Euler86
+      Euler.Euler87
+      Euler.Euler88
+      Euler.Euler89
       Euler.Euler9
+      Euler.Euler90
+      Euler.Euler91
+      Euler.Euler92
+      Euler.Euler93
+      Euler.Euler94
+      Euler.Euler95
+      Euler.Euler96
+      Euler.Euler97
+      Euler.Euler98
+      Euler.Euler99
       Euler.EulerSolver
       Euler.EulerType
       Lib
@@ -171,6 +271,7 @@ test-suite euler-test
   other-modules:
       Euler.Euler1
       Euler.Euler10
+      Euler.Euler100
       Euler.Euler11
       Euler.Euler12
       Euler.Euler13
@@ -215,10 +316,59 @@ test-suite euler-test
       Euler.Euler49
       Euler.Euler5
       Euler.Euler50
+      Euler.Euler51
+      Euler.Euler52
+      Euler.Euler53
+      Euler.Euler54
+      Euler.Euler55
+      Euler.Euler56
+      Euler.Euler57
+      Euler.Euler58
+      Euler.Euler59
       Euler.Euler6
+      Euler.Euler60
+      Euler.Euler61
+      Euler.Euler62
+      Euler.Euler63
+      Euler.Euler64
+      Euler.Euler65
+      Euler.Euler66
+      Euler.Euler67
+      Euler.Euler68
+      Euler.Euler69
       Euler.Euler7
+      Euler.Euler70
+      Euler.Euler71
+      Euler.Euler72
+      Euler.Euler73
+      Euler.Euler74
+      Euler.Euler75
+      Euler.Euler76
+      Euler.Euler77
+      Euler.Euler78
+      Euler.Euler79
       Euler.Euler8
+      Euler.Euler80
+      Euler.Euler81
+      Euler.Euler82
+      Euler.Euler83
+      Euler.Euler84
+      Euler.Euler85
+      Euler.Euler86
+      Euler.Euler87
+      Euler.Euler88
+      Euler.Euler89
       Euler.Euler9
+      Euler.Euler90
+      Euler.Euler91
+      Euler.Euler92
+      Euler.Euler93
+      Euler.Euler94
+      Euler.Euler95
+      Euler.Euler96
+      Euler.Euler97
+      Euler.Euler98
+      Euler.Euler99
       Euler.EulerSolver
       Euler.EulerType
       Lib

@@ -55,7 +55,56 @@ import Euler.Euler47 (euler47)
 import Euler.Euler48 (euler48)
 import Euler.Euler49 (euler49)
 import Euler.Euler50 (euler50)
-
+import Euler.Euler51 (euler51)
+import Euler.Euler52 (euler52)
+import Euler.Euler53 (euler53)
+import Euler.Euler54 (euler54)
+import Euler.Euler55 (euler55)
+import Euler.Euler56 (euler56)
+import Euler.Euler57 (euler57)
+import Euler.Euler58 (euler58)
+import Euler.Euler59 (euler59)
+import Euler.Euler60 (euler60)
+import Euler.Euler61 (euler61)
+import Euler.Euler62 (euler62)
+import Euler.Euler63 (euler63)
+import Euler.Euler64 (euler64)
+import Euler.Euler65 (euler65)
+import Euler.Euler66 (euler66)
+import Euler.Euler67 (euler67)
+import Euler.Euler68 (euler68)
+import Euler.Euler69 (euler69)
+import Euler.Euler70 (euler70)
+import Euler.Euler71 (euler71)
+import Euler.Euler72 (euler72)
+import Euler.Euler73 (euler73)
+import Euler.Euler74 (euler74)
+import Euler.Euler75 (euler75)
+import Euler.Euler76 (euler76)
+import Euler.Euler77 (euler77)
+import Euler.Euler78 (euler78)
+import Euler.Euler79 (euler79)
+import Euler.Euler80 (euler80)
+import Euler.Euler81 (euler81)
+import Euler.Euler82 (euler82)
+import Euler.Euler83 (euler83)
+import Euler.Euler84 (euler84)
+import Euler.Euler85 (euler85)
+import Euler.Euler86 (euler86)
+import Euler.Euler87 (euler87)
+import Euler.Euler88 (euler88)
+import Euler.Euler89 (euler89)
+import Euler.Euler90 (euler90)
+import Euler.Euler91 (euler91)
+import Euler.Euler92 (euler92)
+import Euler.Euler93 (euler93)
+import Euler.Euler94 (euler94)
+import Euler.Euler95 (euler95)
+import Euler.Euler96 (euler96)
+import Euler.Euler97 (euler97)
+import Euler.Euler98 (euler98)
+import Euler.Euler99 (euler99)
+import Euler.Euler100 (euler100)
 
 
 euler :: Int -> EulerType 
@@ -110,4 +159,54 @@ euler n
      | n == 48 =    euler48
      | n == 49 =    euler49
      | n == 50 =    euler50
-     | otherwise =  42 -- Answer to life, universe and all. 
+     | n == 51 =    euler51
+     | n == 52 =    euler52
+     | n == 53 =    euler53
+     | n == 54 =    euler54
+     | n == 55 =    euler55
+     | n == 56 =    euler56
+     | n == 57 =    euler57
+     | n == 58 =    euler58
+     | n == 59 =    euler59
+     | n == 60 =    euler60
+     | n == 61 =    euler61
+     | n == 62 =    euler62
+     | n == 63 =    euler63
+     | n == 64 =    euler64
+     | n == 65 =    euler65
+     | n == 66 =    euler66
+     | n == 67 =    euler67
+     | n == 68 =    euler68
+     | n == 69 =    euler69
+     | n == 70 =    euler70
+     | n == 71 =    euler71
+     | n == 72 =    euler72
+     | n == 73 =    euler73
+     | n == 74 =    euler74
+     | n == 75 =    euler75
+     | n == 76 =    euler76
+     | n == 77 =    euler77
+     | n == 78 =    euler78
+     | n == 79 =    euler79
+     | n == 80 =    euler80
+     | n == 81 =    euler81
+     | n == 82 =    euler82
+     | n == 83 =    euler83
+     | n == 84 =    euler84
+     | n == 85 =    euler85
+     | n == 86 =    euler86
+     | n == 87 =    euler87
+     | n == 88 =    euler88
+     | n == 89 =    euler89
+     | n == 90 =    euler90
+     | n == 91 =    euler91
+     | n == 92 =    euler92
+     | n == 93 =    euler93
+     | n == 94 =    euler94
+     | n == 95 =    euler95
+     | n == 96 =    euler96
+     | n == 97 =    euler97
+     | n == 98 =    euler98
+     | n == 99 =    euler99
+     | n == 100 =   euler100
+     | otherwise =  42 -- Answer to life, universe and all.
