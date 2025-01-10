@@ -54,6 +54,7 @@ module MathUtils
     pentagonalNum,
     generatePentagonal,
     isPentagonal,
+    sameDigits,
   )
 where
 
@@ -233,3 +234,6 @@ generatePentagonal = [pentagonalNum x | x <- [1 .. 2500]] -- the answer is at 21
 
 isPentagonal :: Int -> Bool
 isPentagonal num = num `member` fromAscList generatePentagonal
+
+sameDigits :: Int -> Int -> Bool
+sameDigits a b = sort (show a) == sort (show b)
