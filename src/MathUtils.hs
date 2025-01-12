@@ -55,12 +55,13 @@ module MathUtils
     generatePentagonal,
     isPentagonal,
     sameDigits,
+    possibleCombos,
   )
 where
 
 import Data.Char (intToDigit, ord)
 import Data.List (elemIndex, inits, nub, permutations, sort, tails)
-import Data.Set (fromAscList, fromList, member)
+import Data.Set (fromAscList, member)
 import Numeric (showIntAtBase)
 
 factors :: Int -> [Int]
@@ -216,6 +217,9 @@ nDigitSum = (\(x1, x2) -> read x2 == splitNthDigit x1 || read x2 == splitNthDigi
 factorial :: Int -> Int
 factorial num = product [2 .. num]
 
+bigFactorial :: Integer -> Integer
+bigFactorial num = product [2 .. num]
+
 digitsFactorialSum :: Int -> Int
 digitsFactorialSum 0 = 0
 digitsFactorialSum num = factorial (num `mod` 10) + digitsFactorialSum (num `div` 10)
@@ -237,3 +241,6 @@ isPentagonal num = num `member` fromAscList generatePentagonal
 
 sameDigits :: Int -> Int -> Bool
 sameDigits a b = sort (show a) == sort (show b)
+
+possibleCombos :: Integer -> Integer -> Integer
+possibleCombos n r = bigFactorial n `div` (bigFactorial r * bigFactorial (n - r))
