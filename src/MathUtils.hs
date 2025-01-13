@@ -56,6 +56,7 @@ module MathUtils
     isPentagonal,
     sameDigits,
     possibleCombos,
+    diagonalsGroups,
   )
 where
 
@@ -244,3 +245,6 @@ sameDigits a b = sort (show a) == sort (show b)
 
 possibleCombos :: Integer -> Integer -> Integer
 possibleCombos n r = bigFactorial n `div` (bigFactorial r * bigFactorial (n - r))
+
+diagonalsGroups :: [[Int]]
+diagonalsGroups = [[n ^ 2 - x * (n - 1) | x <- [0 .. 3]] | n <- [3, 5 ..]]
