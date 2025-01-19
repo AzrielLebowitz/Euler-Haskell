@@ -57,12 +57,20 @@ module MathUtils
     sameDigits,
     possibleCombos,
     diagonalsGroups,
+    cubes,
+    isCube,
+    countCubePermutations,
+    countCubePermutations2,
+    isCube2,
+    sumDigitFactorials,
+    digitFactorialChain,
   )
 where
 
-import Data.Char (intToDigit, ord)
+import Data.Char (digitToInt, intToDigit, ord)
+import qualified Data.IntMap as IM
 import Data.List (elemIndex, inits, nub, permutations, sort, tails)
-import Data.Set (fromAscList, member)
+import Data.Set (fromAscList, fromDistinctAscList, fromList, member)
 import Numeric (showIntAtBase)
 
 factors :: Int -> [Int]
@@ -248,3 +256,28 @@ possibleCombos n r = bigFactorial n `div` (bigFactorial r * bigFactorial (n - r)
 
 diagonalsGroups :: [[Int]]
 diagonalsGroups = [[n ^ 2 - x * (n - 1) | x <- [0 .. 3]] | n <- [3, 5 ..]]
+
+cubes :: [Int]
+cubes = [n ^ 3 | n <- [1 .. 1000]]
+
+isCube :: Int -> Bool
+isCube n = n >= 0 && (round (fromIntegral n ** (1 / 3)) ^ 3 == n)
+
+isCube2 :: Int -> Bool
+isCube2 n = n `member` fromDistinctAscList cubes
+
+countCubePermutations :: String -> Int
+countCubePermutations s = length . fromList . filter isCube $ map read $ permutations s
+
+countCubePermutations2 :: String -> Int
+countCubePermutations2 s = length . fromList . filter isCube2 $ map read $ permutations s
+
+factorialMemo :: [Int]
+factorialMemo = map factorial [0 .. 9]
+
+sumDigitFactorials :: Int -> Int
+sumDigitFactorials 0 = 0
+sumDigitFactorials n = (factorialMemo !! (n `mod` 10)) + sumDigitFactorials (n `div` 10)
+
+digitFactorialChain :: Int -> IM.IntMap [Int] -> [Int]
+digitFactorialChain n memo = if IM.member n memo then memo IM.! n else n : digitFactorialChain (sumDigitFactorials n) (IM.insert n [n] memo)
