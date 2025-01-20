@@ -74,7 +74,7 @@ import Data.Set (fromAscList, fromDistinctAscList, fromList, member)
 import Numeric (showIntAtBase)
 
 factors :: Int -> [Int]
-factors n = nub $ [x | x <- [1 .. floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> [x, div n x])
+factors n = [x | x <- [1 .. floor (sqrt (fromIntegral n))], mod n x == 0] >>= (\x -> if x == n `div` x then [x] else [x, n `div` x])
 
 isPrime :: Int -> Bool
 isPrime n = n > 1 && all (\x -> n `mod` x /= 0) [2 .. floor (sqrt (fromIntegral n))]
@@ -148,7 +148,7 @@ canBeWrittenWithTwo :: [Int] -> Int -> Bool
 canBeWrittenWithTwo lst num = any (\x -> (num - x) `elem` lst) lst
 
 cannotBeWrittenWithTwoAbundantNums :: Int -> Bool
-cannotBeWrittenWithTwoAbundantNums num = not $ any (\x -> isAbundant $ num - x) (takeWhile (<= num `div` 2) abundantNumbers)
+cannotBeWrittenWithTwoAbundantNums num = not $ any (\x -> (num - x) `member` fromList abundantNumbers) (takeWhile (<= num `div` 2) abundantNumbers)
 
 countDigits :: Int -> Int
 countDigits = length . show
