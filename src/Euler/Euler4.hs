@@ -1,10 +1,10 @@
-module Euler.Euler4(euler4) where
+module Euler.Euler4 (euler4) where
+
 import Euler.EulerType (EulerType)
 import MathUtils (isPalindrome)
 
-
 generateNums :: [Int]
-generateNums = [x * y | x <- [100..999], y <- [x..999]]
+generateNums = [x * y | x <- [998, 997 .. 100], y <- [999, 998 .. x]]
 
 euler4 :: EulerType
-euler4 = maximum $ filter isPalindrome generateNums
+euler4 = maximum $ take 5 $ filter isPalindrome generateNums
