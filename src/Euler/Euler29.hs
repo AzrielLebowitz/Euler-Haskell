@@ -4,7 +4,6 @@ module Euler.Euler29
 where
 
 import Data.IntSet (fromList, size)
-import Data.List (nub)
 import Euler.EulerType (EulerType)
 
 euler29 :: EulerType
