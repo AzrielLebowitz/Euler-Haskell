@@ -9,4 +9,4 @@ import Euler.EulerType (EulerType)
 import MathUtils (nDigitSum)
 
 euler32 :: EulerType
-euler32 = sum . S.toList . S.fromList $ map (\x -> read x `mod` 10000) $ filter nDigitSum $ permutations "123456789"
+euler32 = sum . S.fromList $ map (\x -> read x `mod` 10000) $ filter nDigitSum $ permutations "123456789"
