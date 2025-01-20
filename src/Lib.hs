@@ -5,13 +5,23 @@ import System.CPUTime
 import System.Environment (lookupEnv)
 import Text.Read (readMaybe)
 
+red :: String
+red = "\x1b[31m" -- Red color
+
+green :: String
+green = "\x1b[32m"
+
+reset :: String
+reset = "\x1b[0m"
+
 runEuler :: Int -> IO ()
 runEuler num = do
   start <- getCPUTime
   print $ euler num
   end <- getCPUTime
   let diff = fromIntegral (end - start) / (10.0 ^ (12 :: Int)) :: Double
-  putStrLn $ "Euler " ++ show num ++ " execution time: " ++ show diff ++ " seconds"
+  let color = if diff >= 0.1 then red else green
+  putStrLn $ "Euler " ++ show num ++ " execution time: " ++ color ++ show diff ++ " seconds" ++ reset
 
 readFromUser :: IO ()
 readFromUser = do
