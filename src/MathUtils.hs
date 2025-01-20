@@ -109,8 +109,8 @@ rotate xs = take (length xs) (iterate (\(y : ys) -> ys ++ [y]) xs)
 reverseInt :: Int -> Int
 reverseInt = read . reverse . show
 
-isPalindrome :: Int -> Bool
-isPalindrome num = num == reverseInt num
+isPalindrome :: String -> Bool
+isPalindrome num = num == reverse num
 
 isPythagorean :: (Int, Int, Int) -> Bool
 isPythagorean (a, b, c) = a ^ 2 + b ^ 2 == c ^ 2
