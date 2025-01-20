@@ -11,7 +11,7 @@ runEuler num = do
   print $ euler num
   end <- getCPUTime
   let diff = fromIntegral (end - start) / (10.0 ^ (12 :: Int)) :: Double
-  putStrLn $ "Execution time: " ++ show diff ++ " seconds"
+  putStrLn $ "Euler " ++ show num ++ " execution time: " ++ show diff ++ " seconds"
 
 readFromUser :: IO ()
 readFromUser = do
@@ -34,9 +34,14 @@ readFromUser = do
 
 someFunc :: IO ()
 someFunc = do
-  number <- System.Environment.lookupEnv "EULER"
+  isAll <- System.Environment.lookupEnv "ALL"
 
-  case number of
-    Nothing -> readFromUser
-    Just x -> do
-      maybe readFromUser runEuler (readMaybe x :: Maybe Int)
+  case isAll of
+    Just _ -> mapM_ runEuler [1 .. 100]
+    Nothing -> do
+      number <- System.Environment.lookupEnv "EULER"
+
+      case number of
+        Nothing -> readFromUser
+        Just x -> do
+          maybe readFromUser runEuler (readMaybe x :: Maybe Int)
